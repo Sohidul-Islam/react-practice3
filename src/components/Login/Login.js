@@ -7,13 +7,13 @@ const Login = () => {
 
     const fireBaseStore = Usefirebase()
 
-    const { user, error, signInWithGoogle, signOutFromGoogleAuth } = fireBaseStore;
+    const { user, error, signInWithGoogle, signWithGitHub } = fireBaseStore;
     console.log("use firebase", fireBaseStore);
     return (
         <div>
             <h1>Login</h1>
             <button onClick={signInWithGoogle}>Google Sign In</button>
-            {user?.email && <button onClick={signOutFromGoogleAuth}>Logout</button>}
+            <button onClick={signWithGitHub}>GitHub Sign In</button>
             <Link to='/register'>New User?</Link>
         </div>
     );
